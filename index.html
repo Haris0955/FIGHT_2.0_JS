@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Fighting_game</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <br>
+
+    <div class="menu">
+        <div class="p1Info">
+
+            <div id="p1Name">Player 1</div>
+
+            <img id="p1" src="https://i.gifer.com/origin/00/0019f6845ceaa9347b881ccbe8f5644a_w200.gif" />
+
+            <div class="playerControls">
+
+                <div class="AttackDiv">
+                    <h3>Q:</h3>
+                    <button onclick="player1.punch(p1, p2, p1.strength)" id="attack">
+                        Punch
+                    </button>
+                </div>
+                <div class="AttackDiv">
+                    <h3>A:</h3>
+                    <button onclick="player1.kick(p1, p2, p1.strength)" id="attack">
+                        Kick
+                    </button>
+                </div>
+
+                <div class="HealDiv">
+                    <h3>Z:</h3>
+                    <button onclick="player1.heal(player1)" id="heal">
+                        Heal
+                    </button>
+                </div>
+            </div>
+
+            <div id="p1Health">100</div>
+        </div>
+
+        <button id="play">Simulate</button>
+
+        <div class="p2Info">
+
+            <div id="p2Name">Player 2</div>
+
+            <img id="p2" src="https://dinofarmgames.com/img/a-pixel/terry-2x.gif" />
+            <div class="playerControls">
+                <div class="AttackDiv">
+                    <h3>P:</h3>
+                    <button onclick="player2.punch(p2, p1, p2.strength)" id="attack">
+                        Punch
+                    </button>
+                </div>
+                <div class="AttackDiv">
+                    <h3>L:</h3>
+                    <button onclick="player2.kick(p2, p1, p2.strength)" id="attack">
+                        Kick
+                    </button>
+                </div>
+                <div class="HealDiv">
+                    <h3>M:</h3>
+                    <button onclick="p2.heal(p2)" id="heal">
+                        Heal
+                    </button>
+                </div>
+            </div>
+
+            <div id="p2Health">100</div>
+        </div>
+
+    </div>
+    <br>
+
+    <div class="resultContainer">
+        <div id="result"></div>
+        <button id="reset" onclick="game.reset(p1,p2)">Reset</button>
+    </div>
+
+    <audio id="p1punch" controls style="display:none">
+        <source src="sounds/fastpunch.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="p1heal" controls style="display:none">
+        <source src="sounds/fastheal.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="p1kick" controls style="display:none">
+        <source src="sounds/fastkick.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="p2punch" controls style="display:none">
+        <source src="sounds/quickhit.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="p2heal" controls style="display:none">
+        <source src="sounds/quickheal.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="p2kick" controls style="display:none">
+        <source src="sounds/quickkick.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="victory" controls style="display:none">
+        <source src="sounds/victory.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
